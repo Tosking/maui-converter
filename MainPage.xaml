@@ -1,7 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:Converter"
+             x:DataType="converter:viewModel"
              x:Class="Converter.MainPage">
-
+    <StackLayout>
+        <Grid Margin="0,0,0,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <DatePicker Format="D" FontSize="19" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1"  Date="{Binding CurrentDate}"></DatePicker>
+            
+        </Grid>
+        <StackLayout>
+            <Frame Margin="10">
+                <Picker  Title="Currency 1"
+                         ItemsSource="{Binding CurrencyList}"
+                         SelectedItem="{Binding MainCurrency}"
+                />
+            </Frame>
+            <Frame Margin="10">
+                <StackLayout>
+                    <Entry Keyboard="Numeric" Text="{Binding EntryMain }"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    
+       
+        <StackLayout>
+            <Frame Margin="10">
+                <Picker Title="Currency 2"
+                        ItemsSource="{Binding CurrencyList}"
+                        SelectedItem="{Binding SecondCurrency}"
+                />
+            </Frame>
+            <Frame Margin="10">
+                <StackLayout>
+                    <Entry Text="{Binding Result}"  />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        
+    </StackLayout>
    
 </ContentPage>
