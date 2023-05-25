@@ -72,6 +72,10 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "PCLStorage": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
             "Xamarin.Android.Glide": {
               "target": "Package",
               "version": "[4.13.2.2, )",

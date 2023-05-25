@@ -5,18 +5,9 @@
              x:DataType="converter:viewModel"
              x:Class="Converter.MainPage">
     <StackLayout>
-        <Grid Margin="0,0,0,20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <DatePicker Format="D" FontSize="19" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1"  Date="{Binding CurrentDate}"></DatePicker>
             
-        </Grid>
-        <StackLayout>
+        <DatePicker Format="D" FontSize="19" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"  Date="{Binding CurrentDate}"></DatePicker>
+            <StackLayout>
             <Frame Margin="10">
                 <Picker  Title="Currency 1"
                          ItemsSource="{Binding CurrencyList}"
@@ -44,7 +35,10 @@
                 </StackLayout>
             </Frame>
         </StackLayout>
-        
+        <Frame HasShadow="True" CornerRadius="20">
+            <Label HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" 
+                   Text="{Binding ErrorText}" FontSize="15"/>
+        </Frame>
     </StackLayout>
    
 </ContentPage>
